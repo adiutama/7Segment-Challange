@@ -70,7 +70,7 @@ class SevenSegmentTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testFive(){
-		$expected = " _\n|_ \n _|";
+		$expected = " _\n|_\n _|";
 
 		echo("\n");
 		echo($expected);
@@ -83,7 +83,7 @@ class SevenSegmentTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testSix(){
-		$expected = " _\n|_ \n|_|";
+		$expected = " _\n|_\n|_|";
 
 		echo("\n");
 		echo($expected);
@@ -130,6 +130,71 @@ class SevenSegmentTest extends \PHPUnit_Framework_TestCase {
 		$ss = new SevenSegment();
 
 		$result = $ss->convert(9);
+
+		$this->assertEquals($expected, $result);
+	}
+
+	public function testTen(){
+		$expected = "    _\n  || |\n  ||_|";
+
+		echo("\n");
+		echo($expected);
+
+		$ss = new SevenSegment();
+
+		$result = $ss->convert(10);
+
+		$this->assertEquals($expected, $result);
+	}
+
+	public function testEleven(){
+		$expected = "\n  |  |\n  |  |";
+
+		echo("\n");
+		echo($expected);
+
+		$ss = new SevenSegment();
+
+		$result = $ss->convert(11);
+
+		$this->assertEquals($expected, $result);
+	}
+
+	public function testTweleve(){
+		$expected = "    _\n  | _|\n  ||_";
+
+		echo("\n");
+		echo($expected);
+
+		$ss = new SevenSegment();
+
+		$result = $ss->convert(12);
+
+		$this->assertEquals($expected, $result);
+	}
+
+	public function testHundread(){
+		$expected = "    _  _\n  || || |\n  ||_||_|";
+
+		echo("\n");
+		echo($expected);
+
+		$ss = new SevenSegment();
+
+		$result = $ss->convert(100);
+
+		$this->assertEquals($expected, $result);
+	}
+
+	public function testTwoHundreadFiftyFive(){
+		$expected = " _  _  _\n _||_ |_\n|_  _| _|";
+
+		echo("\n");
+		echo($expected);
+
+		$ss = new SevenSegment();
+
+		$result = $ss->convert(255);
 
 		$this->assertEquals($expected, $result);
 	}
